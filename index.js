@@ -5,6 +5,7 @@ module.exports =  function (data,filePath,option) {
         var userStack =  stack();
         var dataToFile;
         var writePath;
+        var option = option || {};
         if(typeof data === 'object') {
             var cache = [];
             dataToFile = JSON.stringify(data, function (key,value) {
@@ -14,14 +15,14 @@ module.exports =  function (data,filePath,option) {
                     }
                     cache.push(value);
                     if(Array.isArray(value)){
-                        if(option && option.array) {
+                        if(option.array) {
                             return value
                         }
                         return '[Array]'
                     }
                 }
                 return value;
-            },2);
+            }, (option.space || 2));
         } else if (typeof data === 'string'){
             dataToFile = data
         } else if (typeof data === 'function') {
@@ -34,10 +35,15 @@ module.exports =  function (data,filePath,option) {
         } else {
             writePath = path.dirname(userStack[1].getFileName())  + '/' + filePath;
         }
-        fs.writeFile(writePath,dataToFile,function(err,result){
-            if(err) {
-                console.log('Cant read file' , err)
-            }
+        if(option.sync) {
+            fs.writeFileSync(writePath,dataToFile);
             cache = null;
-        })
+        } else {
+            fs.writeFile(writePath,dataToFile,function(err,result){
+                if(err) {
+                    console.log('Cant read file' , err)
+                }
+                cache = null;
+            })
+        }
     }

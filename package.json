@@ -1,5 +1,5 @@
 {
-  "name": "jsonfile",
+  "name": "datatofile",
   "version": "0.0.1",
   "description": "Writing data to file for easy debug",
   "main": "index.js",
