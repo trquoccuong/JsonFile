@@ -26,7 +26,7 @@ support Circular object
 | space | default 2, json.stringify parameter |
 | sync | default false |
 
-###The MIT License (MIT)
+### The MIT License (MIT)
 
 Copyright (c) <2015> Tran Quoc Cuong
 
