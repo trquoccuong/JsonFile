@@ -1,6 +1,6 @@
 {
   "name": "datatofile",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Writing data to file for easy debug",
   "main": "index.js",
   "scripts": {
