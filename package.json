@@ -1,0 +1,14 @@
+{
+  "name": "jsonfile",
+  "version": "0.0.1",
+  "description": "Writing data to file for easy debug",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tran Quoc Cuong <trquoccuong@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "callsite": "^1.0.0"
+  }
+}
