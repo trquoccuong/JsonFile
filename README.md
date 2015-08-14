@@ -13,8 +13,8 @@ $npm install datatofile
 ### How to use
 
 ```
-var jsonFile = require('datatofile');
-jsonFile(<link to file or name of file>,<data you want to write>,<option>);
+var dataToFile = require('datatofile');
+dataToFile(<link to file or name of file>,<data you want to write>,<option>);
 ```
 support Circular object
 
