@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var stack = require('callsite');
-module.exports =  function (data,filePath,option) {
+module.exports =  function (filePath,data,option) {
         var userStack =  stack();
         var dataToFile;
         var writePath;
@@ -33,6 +33,8 @@ module.exports =  function (data,filePath,option) {
         if(path.isAbsolute(filePath)) {
             writePath = filePath;
         } else {
+            console.log(userStack[1].getFileName());
+            console.log(filePath)
             writePath = path.dirname(userStack[1].getFileName())  + '/' + filePath;
         }
         if(option.sync) {
